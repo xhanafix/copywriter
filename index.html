@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB Ads Copy Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Facebook Ads Copy Generator</h1>
+        
+        <div class="form-container">
+            <div class="input-group">
+                <label for="apiKey">OpenAI API Key:</label>
+                <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+            </div>
+
+            <div class="input-group">
+                <label for="product">Product/Service:</label>
+                <input type="text" id="product" placeholder="What are you promoting?">
+            </div>
+
+            <div class="input-group">
+                <label for="painPoint">Customer Pain Point:</label>
+                <textarea id="painPoint" placeholder="What problem does your target audience face?"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="formula">Copywriting Formula:</label>
+                <select id="formula">
+                    <option value="AIDA">AIDA (Attention, Interest, Desire, Action)</option>
+                    <option value="PAS">PAS (Problem, Agitate, Solution)</option>
+                    <option value="BAB">BAB (Before, After, Bridge)</option>
+                    <option value="FAB">FAB (Features, Advantages, Benefits)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="tone">Tone of Voice:</label>
+                <select id="tone">
+                    <option value="professional">Professional</option>
+                    <option value="friendly">Friendly</option>
+                    <option value="casual">Casual</option>
+                    <option value="humorous">Humorous</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="language">Preferred Language:</label>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                </select>
+            </div>
+
+            <button id="generate">Generate Copy</button>
+        </div>
+
+        <div class="result-container">
+            <h2>Generated Copy</h2>
+            <div id="loading" class="loading hidden">Generating...</div>
+            <div id="result" class="copy-result"></div>
+            <button id="copy" class="copy-button hidden">Copy to Clipboard</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
