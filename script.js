@@ -169,21 +169,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     }
-
-    function shareOnTwitter() {
-        const text = encodeURIComponent("Check out this awesome Facebook Ads Copy Generator! It helps create compelling ad copy using AI and proven copywriting formulas. 🚀");
-        const url = encodeURIComponent(window.location.href);
-        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
-    }
-
-    function shareOnLinkedIn() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent("Facebook Ads Copy Generator");
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`, '_blank');
-    }
-
-    function shareOnFacebook() {
-        const url = encodeURIComponent(window.location.href);
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-    }
 }); 
