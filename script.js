@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     model: "gpt-3.5-turbo",
                     messages: [{
                         role: "system",
-                        content: `You are a professional copywriter who writes in ${languageName}. 
-                                 Always respond in ${languageName} only.`
+                        content: `You are a professional copywriter who writes in proper ${languageName}. 
+                                 Always respond in proper ${languageName} only.`
                     },
                     {
                         role: "user",
-                        content: `Act as a world class copywriter. Write a Facebook ad copy in proper ${languageName} for this product/service: ${product}. 
+                        content: `Act as a world class experience copywriter. Write a Facebook ad copy in proper ${languageName} for this product/service: ${product}. 
                                  Target audience pain point: ${painPoint}
                                  ${formulaContexts[formula]}
                                  Tone of voice: ${tone}
