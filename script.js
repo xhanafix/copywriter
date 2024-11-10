@@ -8,6 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const groqHint = document.getElementById('groqHint');
     const openrouterHint = document.getElementById('openrouterHint');
 
+    // Define copywriting formula contexts
+    const formulaContexts = {
+        'AIDA': 'Use the AIDA formula: First grab Attention, build Interest, create Desire, then call to Action',
+        'PAS': 'Use the PAS formula: Identify the Problem, Agitate the pain points, present the Solution',
+        'BAB': 'Use the BAB formula: Show the Before state, paint the After picture, provide the Bridge to get there',
+        'FAB': 'Use the FAB formula: List the Features, explain the Advantages, emphasize the Benefits',
+        '4Ps': 'Use the 4Ps formula: Make a Promise, Paint the Picture, Provide Proof, Push for action',
+        'PASTOR': 'Use the PASTOR formula: Present the Problem, Amplify consequences, Share a Story, Show the Transformation, Make an Offer, Ask for Response',
+        'QUEST': 'Use the QUEST formula: Qualify the audience, help them Understand the problem, Educate about solution, Stimulate interest, Transition to action',
+        '4Cs': 'Use the 4Cs formula: Be Clear in message, Concise in delivery, Compelling in reasoning, Credible in proof',
+        'PPPP': 'Use the PPPP formula: Paint the Picture of the problem, Make a Promise, Prove your claims, Push for action',
+        'SSS': 'Use the SSS formula: Start with a Star (attention grabber), Tell a Story, Present the Solution',
+        'ACCA': 'Use the ACCA formula: Build Awareness, ensure Comprehension, create Conviction, prompt Action',
+        '6+1': 'Use the 6+1 formula: Answer Who, What, When, Where, Why, How + Address Money/Value aspect',
+        'SLAP': 'Use the SLAP formula: Make them Stop scrolling, Look at the offer, Act on interest, Purchase the product',
+        '1-2-3-4': 'Use the 1-2-3-4 formula: Present 1 Problem, Make 2 Promises, Provide 3 Proofs, Show 4 Action Steps'
+    };
+
     // Handle API provider change
     apiProvider.addEventListener('change', () => {
         // Hide all hints
