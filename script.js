@@ -44,36 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${apiKey}`,
-                    'Accept': 'application/json'
+                    'HTTP-Referer': window.location.href,
+                    'X-Title': 'FB Ads Copy Generator'
                 },
                 body: JSON.stringify({
-                    model: "mixtral-8x7b-32768",
+                    model: "mistralai/mixtral-8x7b-instruct",
                     messages: [{
                         role: "system",
-                        content: `You are a professional copywriter who writes in correct ${Name}. 
-                                 Always respond in correct ${Name} only.`
+                        content: `You are a professional copywriter who writes in ${languageName}. 
+                                 Always respond in ${languageName} only.`
                     },
                     {
                         role: "user",
-                        content: `Act as a excellent copywriter. Write a Facebook ad copy in correct ${languageName} for this product/service: ${product}. 
+                        content: `Act as a world class copywriter. Write a Facebook ad copy in ${languageName} for this product/service: ${product}. 
                                  Target audience pain point: ${painPoint}
                                  ${formulaContexts[formula]}
                                  Tone of voice: ${tone}
 
                                  Important instructions:
                                  1. Start with strong hookline to grab attention
-                                 2. The entire response MUST be in correct ${languageName} only
+                                 2. The entire response MUST be in ${languageName} only
                                  2. Write in a conversational, human-like tone
                                  3. Add suitable emojis to make the copy engaging
                                  4. Use short paragraphs and make it scannable
                                  5. Make it feel personal and relatable
                                  6. Avoid corporate jargon
-                                 7. Include a clear call-to-action in correct ${languageName}
+                                 7. Include a clear call-to-action in ${languageName}
                                  8. Follow the selected formula structure strictly
                                  
                                  For Bahasa Malaysia: Use casual Malaysian style

@@ -1,10 +1,10 @@
 # Facebook Ads Copy Generator
 
-A powerful web application that generates compelling Facebook ad copy using Groq's AI model (Mixtral-8x7b). This tool helps marketers and business owners create effective ad copy based on proven copywriting formulas, with support for multiple languages and customizable tone of voice.
+A powerful web application that generates compelling Facebook ad copy using OpenRouter's AI models. This tool helps marketers and business owners create effective ad copy based on proven copywriting formulas, with support for multiple languages and customizable tone of voice.
 
 ## 🌟 Features
 
-- Generate professional ad copy using Groq's Mixtral-8x7b model
+- Generate professional ad copy using OpenRouter's Mixtral-8x7b model
 - 14 proven copywriting formulas:
   - AIDA (Attention, Interest, Desire, Action)
   - PAS (Problem, Agitate, Solution)
