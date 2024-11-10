@@ -44,29 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
+                    model: "mixtral-8x7b-32768",
                     messages: [{
                         role: "system",
-                        content: `You are a professional copywriter who writes in proper ${languageName}. 
-                                 Always respond in proper ${languageName} only.`
+                        content: `You are a professional copywriter who writes in ${languageName}. 
+                                 Always respond in ${languageName} only.`
                     },
                     {
                         role: "user",
-                        content: `Act as a world class experience copywriter. Write a Facebook ad copy in proper ${languageName} for this product/service: ${product}. 
+                        content: `Act as a world class copywriter. Write a Facebook ad copy in ${languageName} for this product/service: ${product}. 
                                  Target audience pain point: ${painPoint}
                                  ${formulaContexts[formula]}
                                  Tone of voice: ${tone}
 
                                  Important instructions:
                                  1. Start with strong hookline to grab attention
-                                 2. The entire response MUST be in proper ${languageName} only
+                                 2. The entire response MUST be in ${languageName} only
                                  2. Write in a conversational, human-like tone
                                  3. Add suitable emojis to make the copy engaging
                                  4. Use short paragraphs and make it scannable
@@ -81,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                  
                                  Please provide a compelling and conversion-focused ad copy.`
                     }],
-                    max_tokens: 500,
                     temperature: 0.8
                 })
             });

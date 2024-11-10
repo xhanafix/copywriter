@@ -208,4 +208,26 @@ button:active::after {
     .copy-result:hover {
         background-color: #3a3b3c;
     }
+}
+
+.api-hint {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.api-hint a {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.api-hint a:hover {
+    text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+    .api-hint {
+        color: #999;
+    }
 } 

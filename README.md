@@ -1,40 +1,44 @@
 # Facebook Ads Copy Generator
 
-A simple web application that generates compelling Facebook ad copy using OpenAI's GPT-3.5 model. This tool helps marketers and business owners create effective ad copy based on their product/service, target audience pain points, and preferred copywriting formula.
+A powerful web application that generates compelling Facebook ad copy using Groq's AI model (Mixtral-8x7b). This tool helps marketers and business owners create effective ad copy based on proven copywriting formulas, with support for multiple languages and customizable tone of voice.
 
-## Features
+## 🌟 Features
 
-- Generate ad copy using OpenAI's GPT-3.5 model
-- Multiple copywriting formulas (AIDA, PAS, BAB, FAB)
-- Different tone of voice options
-- Multiple language support
+- Generate professional ad copy using Groq's Mixtral-8x7b model
+- 14 proven copywriting formulas:
+  - AIDA (Attention, Interest, Desire, Action)
+  - PAS (Problem, Agitate, Solution)
+  - BAB (Before, After, Bridge)
+  - FAB (Features, Advantages, Benefits)
+  - 4Ps (Promise, Picture, Proof, Push)
+  - PASTOR (Problem, Amplify, Story, Transformation, Offer, Response)
+  - QUEST (Qualify, Understand, Educate, Stimulate, Transition)
+  - 4Cs (Clear, Concise, Compelling, Credible)
+  - PPPP (Picture, Promise, Prove, Push)
+  - SSS (Star, Story, Solution)
+  - ACCA (Awareness, Comprehension, Conviction, Action)
+  - 6+1 (Who, What, When, Where, Why, How + Money)
+  - SLAP (Stop, Look, Act, Purchase)
+  - 1-2-3-4 (1 Problem, 2 Promises, 3 Proofs, 4 Steps)
+- Multiple language support:
+  - English
+  - Bahasa Malaysia
+  - Chinese (中文)
+  - Tamil (தமிழ்)
+  - Spanish
+  - French
+  - German
+  - Italian
+- Different tone of voice options:
+  - Professional
+  - Friendly
+  - Casual
+  - Humorous
+  - Urgent
 - Copy to clipboard functionality
-- Clean and responsive UI
+- Clean and responsive UI with dark mode support
+- Interactive animations and visual feedback
 
-## How to Use
+## 🚀 How to Use
 
-1. Clone this repository
-2. Open `index.html` in your web browser
-3. Enter your OpenAI API key
-4. Fill in the required information:
-   - Product/Service description
-   - Customer pain point
-   - Select copywriting formula
-   - Choose tone of voice
-   - Select preferred language
-5. Click "Generate Copy"
-6. Copy the generated text to use in your Facebook ads
-
-## Requirements
-
-- OpenAI API key (Get one at https://platform.openai.com/api-keys)
-- Modern web browser
-- Internet connection
-
-## Security Note
-
-This application runs entirely in the browser. Your OpenAI API key is only used for making API requests and is never stored or transmitted elsewhere.
-
-## License
-
-MIT License 
+1. Clone this repository:
