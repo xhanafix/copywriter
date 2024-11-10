@@ -211,10 +211,18 @@ button:active::after {
 }
 
 .api-hint {
-    display: block;
+    display: none;
     margin-top: 0.5rem;
     font-size: 0.8rem;
     color: #666;
+}
+
+#openaiHint {
+    display: block;
+}
+
+.input-group select#apiProvider {
+    margin-bottom: 0.5rem;
 }
 
 .api-hint a {

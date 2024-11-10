@@ -12,9 +12,20 @@
         
         <div class="form-container">
             <div class="input-group">
-                <label for="apiKey">OpenRouter API Key:</label>
-                <input type="password" id="apiKey" placeholder="Enter your OpenRouter API key">
-                <small class="api-hint">Get your API key at <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a></small>
+                <label for="apiProvider">API Provider:</label>
+                <select id="apiProvider">
+                    <option value="openai">OpenAI</option>
+                    <option value="groq">Groq</option>
+                    <option value="openrouter">OpenRouter</option>
+                </select>
+                <small class="api-hint" id="openaiHint">Get OpenAI API key at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com/api-keys</a></small>
+                <small class="api-hint" id="groqHint" style="display: none;">Get Groq API key at <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a></small>
+                <small class="api-hint" id="openrouterHint" style="display: none;">Get OpenRouter API key at <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a></small>
+            </div>
+
+            <div class="input-group">
+                <label for="apiKey">API Key:</label>
+                <input type="password" id="apiKey" placeholder="Enter your API key">
             </div>
 
             <div class="input-group">
