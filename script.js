@@ -1,3 +1,33 @@
+// Add these share functions at the beginning of the file, OUTSIDE of DOMContentLoaded
+function shareOnTwitter() {
+    const text = encodeURIComponent("Check out this awesome Facebook Ads Copy Generator! It helps create compelling ad copy using AI and proven copywriting formulas. 🚀");
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+}
+
+function shareOnLinkedIn() {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent("Facebook Ads Copy Generator");
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`, '_blank');
+}
+
+function shareOnFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+}
+
+function shareOnWhatsApp() {
+    const text = encodeURIComponent("Check out this awesome Facebook Ads Copy Generator! 🚀\n\n");
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://wa.me/?text=${text}${url}`, '_blank');
+}
+
+function shareOnTelegram() {
+    const text = encodeURIComponent("Check out this awesome Facebook Ads Copy Generator! 🚀");
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generate');
     const copyBtn = document.getElementById('copy');
