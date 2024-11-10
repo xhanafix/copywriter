@@ -29,6 +29,13 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .input-group {
@@ -64,10 +71,30 @@ button {
     font-size: 1rem;
     width: 100%;
     transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
     background-color: #166fe5;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+button:active::after {
+    width: 200px;
+    height: 200px;
 }
 
 .result-container {
@@ -83,6 +110,12 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     min-height: 100px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.copy-result:hover {
+    background-color: #f8f9fa;
 }
 
 .loading {
@@ -102,4 +135,77 @@ button:hover {
 
 .copy-button:hover {
     background-color: #36a420;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+    transition: all 0.3s ease;
+}
+
+.input-group input:hover,
+.input-group textarea:hover,
+.input-group select:hover {
+    border-color: #1877f2;
+}
+
+.loading::after {
+    content: '...';
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}
+
+@keyframes success {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.copy-button.success {
+    animation: success 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem auto;
+    }
+
+    .form-container,
+    .result-container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #18191a;
+        color: #e4e6eb;
+    }
+
+    .form-container,
+    .result-container {
+        background: #242526;
+    }
+
+    input, textarea, select {
+        background-color: #3a3b3c;
+        color: #e4e6eb;
+        border-color: #3a3b3c;
+    }
+
+    .copy-result:hover {
+        background-color: #3a3b3c;
+    }
 } 

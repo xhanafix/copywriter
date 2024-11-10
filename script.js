@@ -40,10 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                  Use the ${formula} copywriting formula
                                  Tone of voice: ${tone}
                                  Language: ${language}
+                                 Important instructions:
+                                 1. Write in a conversational, human-like tone
+                                 2. Add suitable emojis to make the copy engaging
+                                 3. Use short paragraphs and make it scannable
+                                 4. Include a clear call-to-action
+                                 5. Make it feel personal and relatable
+                                 6. Avoid corporate jargon
                                  Please provide a compelling and conversion-focused ad copy.`
                     }],
                     max_tokens: 500,
-                    temperature: 0.7
+                    temperature: 0.8
                 })
             });
 
