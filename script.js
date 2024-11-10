@@ -42,13 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     {
                         role: "user",
-                        content: `Write a Facebook ad copy in ${languageName} for this product/service: ${product}. 
+                        content: `Act as a world class copywriter. Write a Facebook ad copy in ${languageName} for this product/service: ${product}. 
                                  Target audience pain point: ${painPoint}
                                  Use the ${formula} copywriting formula
                                  Tone of voice: ${tone}
 
                                  Important instructions:
-                                 1. The entire response MUST be in ${languageName} only
+                                 1. Start with a great hookline to get the reader attention
+                                 2. The entire response MUST be in ${languageName} only
                                  2. Write in a conversational, human-like tone
                                  3. Add suitable emojis to make the copy engaging
                                  4. Use short paragraphs and make it scannable
