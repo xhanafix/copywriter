@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const painPoint = document.getElementById('painPoint').value;
         const formula = document.getElementById('formula').value;
         const tone = document.getElementById('tone').value;
-        const language = document.getElementById('language').value;
+        const languageSelect = document.getElementById('language');
+        const language = languageSelect.value;
+        const languageName = languageSelect.options[languageSelect.selectedIndex].text;
 
         if (!apiKey || !product || !painPoint) {
             alert('Please fill in all required fields');
@@ -34,19 +36,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     model: "gpt-3.5-turbo",
                     messages: [{
+                        role: "system",
+                        content: `You are a professional copywriter who writes in ${languageName}. 
+                                 Always respond in ${languageName} only.`
+                    },
+                    {
                         role: "user",
-                        content: `Generate a Facebook ad copy for ${product}. 
+                        content: `Write a Facebook ad copy in ${languageName} for this product/service: ${product}. 
                                  Target audience pain point: ${painPoint}
                                  Use the ${formula} copywriting formula
                                  Tone of voice: ${tone}
-                                 Language: ${language}
+
                                  Important instructions:
-                                 1. Write in a conversational, human-like tone
-                                 2. Add suitable emojis to make the copy engaging
-                                 3. Use short paragraphs and make it scannable
-                                 4. Include a clear call-to-action
+                                 1. The entire response MUST be in ${languageName} only
+                                 2. Write in a conversational, human-like tone
+                                 3. Add suitable emojis to make the copy engaging
+                                 4. Use short paragraphs and make it scannable
                                  5. Make it feel personal and relatable
                                  6. Avoid corporate jargon
+                                 7. Include a clear call-to-action in ${languageName}
+                                 
+                                 For Bahasa Malaysia: Use casual Malaysian style
+                                 For Tamil: Use proper Tamil grammar and script
+                                 For Chinese: Use Simplified Chinese characters
+                                 
                                  Please provide a compelling and conversion-focused ad copy.`
                     }],
                     max_tokens: 500,
@@ -75,8 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.clipboard.writeText(textToCopy).then(() => {
             const originalText = copyBtn.innerText;
             copyBtn.innerText = 'Copied!';
+            copyBtn.classList.add('success');
             setTimeout(() => {
                 copyBtn.innerText = originalText;
+                copyBtn.classList.remove('success');
             }, 2000);
         });
     }
